@@ -6,12 +6,8 @@
 <LINK href="/css/style.css" type=text/css rel=stylesheet>
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/profile.js"></script>
-<script src="/js/jquery.validate.pack.js" type="text/javascript"></script>
-<script type="text/javascript">
-      $(document).ready(function(){
-      $("#contactform").validate();
-      });
-  </script> 
+<script src="/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/js/valodation.js" type="text/javascript"></script> 
 </head>
 <body>
 

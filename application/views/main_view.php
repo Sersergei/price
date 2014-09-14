@@ -13,9 +13,11 @@ while ($array = $data->fetchObject()) {
             <td>$array->name</td>
             <td align="center">
             <div class="gear">
+            
               <span id="$array->id" class="datainfo">$array->price</span>
               <a class="savebtn">Save</a>
               <a class="cancelbtn">Cancel</a>
+            
             </div>
             
             </td>
@@ -38,10 +40,10 @@ __END;
 
     <form action="" method="POST" enctype="multipart/form-data" id="contactform">
         <tr>
-            <td><input type="text" name="name" id="name" size="35" class="required" /></td>
-            <td><input type="text" name="price" id="price" size="5" class="required"/></td>
-            <td><textarea name="descr" id="descr" cols="40" rows="3"class="required"></textarea></td>
-            <td><input name="image" type="file" style="width:200px;" class="required"/></td>
+            <td><input type="text" name="name" id="name" size="35" required /></td>
+            <td><input type="text" name="price" id="price" size="5" required/></td>
+            <td><textarea name="descr" id="descr" cols="40" rows="3"required ></textarea></td>
+            <td><input name="image" type="file" style="width:200px;" required/></td> 
             <td align="center"><input type="submit" name="send" id="send" value="Add" /></td>
         </tr>
     </form>

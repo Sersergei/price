@@ -28,8 +28,8 @@ $(document).ready(function(){
                   type: "POST",
                   url: "/price/update",
                   data: "price="+newval+"&id="+newid,
-                  success: function(){
-                    alert('Мудак заполни правильно')
+                  success: function(val){
+                    alert(val)
                   }
                 });
         

@@ -18,7 +18,7 @@ class Model_price extends Model
         if ($description == "")
             die("Вы не корректно ввели описание");
         $price = $this->validation_price($price);
-        if ($price == "" and $price <= 0)
+        if ($price == "" or $price <= 0)
             die("Вы не корректно ввели цену");
         //записываем данные в БД
         $result = $this->db()->prepare("INSERT INTO `products`( `name`, `price`, `description`, `image`) VALUES (:name,:price,:description,:image)");
@@ -40,7 +40,10 @@ class Model_price extends Model
     function price_update($id, $price)
     {
         //проверяем цену
-        $price = $this->validation($price);
+        $price = $this->validation_price($price);
+         if ($price == "" or $price<=0)
+            die("Вы не корректно ввели цену");
+
         //вносим изменение цены
         $result = $this->db()->prepare("UPDATE `products` SET `price`=:price WHERE `id`=:id");
         $result->bindParam(':price', $price, PDO::PARAM_INT);

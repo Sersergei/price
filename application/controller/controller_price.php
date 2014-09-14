@@ -58,8 +58,9 @@ class Controller_price extends Controller
     function action_update()
     {
         $result = new Model_price;
-        $result->price_update($_POST['id'], $_POST['price']);
-        echo($_POST['price']);
+        $result=$result->price_update($_POST['id'], $_POST['price']);
+        echo("Данные успешно сохранены");
+        
     }
 }
 ?>
