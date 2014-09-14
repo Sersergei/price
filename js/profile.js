@@ -26,9 +26,11 @@ $(document).ready(function(){
 		
         $.ajax({
                   type: "POST",
-                  url: "/message/update",
+                  url: "/price/update",
                   data: "price="+newval+"&id="+newid,
-                
+                  success: function(){
+                    alert('Мудак заполни правильно')
+                  }
                 });
         
 		$(this).css("display", "none");

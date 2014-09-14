@@ -10,6 +10,7 @@ class Controller_price extends Controller
             //удаляем картинку
             $image = "image/" . $_POST['image'];
             unlink($image);
+            Route::refresh($_SERVER['HTTP_HOST']);
         }
         if (isset($_POST['send'])) { // Проверка на отправку формы добавления записи
 
@@ -46,7 +47,7 @@ class Controller_price extends Controller
                 die("Вы не выбрали файл или он имеет неправильный формат");
             }
 
-
+ Route::refresh($_SERVER['HTTP_HOST']);
         }
 
         //выборка всех записей и вывод
@@ -58,7 +59,7 @@ class Controller_price extends Controller
     {
         $result = new Model_price;
         $result->price_update($_POST['id'], $_POST['price']);
-
+        echo($_POST['price']);
     }
 }
 ?>
